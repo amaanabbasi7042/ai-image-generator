@@ -4,16 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Image Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="app-container">
-    <h1>AI Image Generator</h1>
-    <textarea id="prompt" placeholder="Enter your prompt here..."></textarea>
-    <button onclick="generateImage()">Generate Image</button>
-    <div id="result-container"></div>
-  </div>
+<body class="min-h-screen bg-gray-900 text-gray-100 font-sans">
+  <main class="container mx-auto px-4 py-8">
+    <header class="text-center mb-12">
+      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+        AI Image Generator
+      </h1>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        Bring your imagination to life. Describe anything you can think of and watch our AI create a unique image for you.
+      </p>
+    </header>
 
+    <div class="bg-gray-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-700/50">
+      <div class="flex flex-col lg:flex-row gap-8">
+        
+        <!-- Left Side Controls -->
+        <div class="flex-1 space-y-6">
+          <div>
+            <label for="prompt" class="block text-sm font-medium text-gray-300 mb-2">
+              Describe your vision
+            </label>
+            <textarea id="prompt" rows="4" placeholder="e.g., A photo of an astronaut riding a horse on Mars"
+              class="w-full bg-gray-900/70 border border-gray-600 rounded-lg p-3 text-gray-100 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition duration-200 resize-none"></textarea>
+            <button id="sampleBtn" class="text-xs text-purple-400 hover:text-purple-300 mt-2 transition-colors">
+              Try a sample prompt
+            </button>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Aspect Ratio</label>
+            <div id="aspectButtons" class="grid grid-cols-5 gap-2"></div>
+          </div>
+
+          <button id="generateBtn"
+            class="w-full flex items-center justify-center text-lg font-semibold bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+            Generate Image
+          </button>
+        </div>
+
+        <!-- Right Side Display -->
+        <div class="flex-1 flex items-center justify-center bg-gray-900/50 rounded-lg p-4 border border-gray-700 aspect-square">
+          <div id="outputContainer" class="text-center text-gray-500 w-full h-full flex flex-col justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p class="mt-2">Your generated image will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center py-6 mt-12 text-gray-500 text-sm">
+      <p>Powered by Google Gemini API</p>
+    </footer>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
