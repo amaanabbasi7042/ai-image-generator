@@ -1,0 +1,5 @@
+{
+  "name": "AI Image Generator",
+  "description": "A powerful and intuitive application that leverages the Gemini API to transform your text prompts into stunning, high-quality images. Customize aspect ratios and watch your ideas come to life.",
+  "requestFramePermissions": []
+}
