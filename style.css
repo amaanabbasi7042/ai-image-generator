@@ -1,6 +1,1 @@
-/* Additional custom styles */
-.aspect-selected {
-  background-color: rgba(147, 51, 234, 0.5);
-  border-color: #a855f7;
-  color: white;
-}
+body { font-family: sans-serif; background: #fff; margin: 0; padding: 2rem; }
